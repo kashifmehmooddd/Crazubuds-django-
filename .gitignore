@@ -1,1 +1,29 @@
 myenv
+# Ignore system files
+*.pyc
+__pycache__/
+
+# Ignore development and runtime files
+*.sqlite3
+*.pyc
+*.pyo
+*.pyc
+*.pyo
+*.log
+*.swp
+
+# Ignore environment variables file
+.env
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore compiled files
+/static/assets/
+
+# Ignore local settings
+/local_settings.py
+
