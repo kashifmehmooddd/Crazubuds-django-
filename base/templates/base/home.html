@@ -10,16 +10,19 @@
   }
 
   .content {
-    flex: 3
+    flex: 4;
+    border-left: 1px solid rgb(0, 0, 0);
+    margin-top: -0.7%;
+    padding: 5px;
+    min-height: 100%;
   }
 </style>
-<h1>Home template</h1>
-<hr />
 <div class="home">
   <div class="browse">
     <h3>
       Browse rooms
     </h3>
+    <hr>
     <a href="{% url 'home' %}">
       all
     </a>
@@ -39,8 +42,10 @@
       {% for room in rooms %}
       <div>
         <span>@{{room.host.username}}</span>
+        {% if request.user == room.host %}
         <a href="{% url 'updateRoom' room.id%}">edit</a>
         <a href="{% url 'deleteRoom' room.id%}">delete</a>
+        {% endif %}
         <a href="{% url 'room' room.id %}">
           <h3>{{room.id}} -- {{room.name}}</h3>
         </a>
